@@ -10,6 +10,8 @@ void main(){
 /* B1 - Declare String? telefone sem valor inicial e imprima-a usando ?? para exibir "não informado" quando estiver vazia. */
 void b1(){
 
+    print("Exercício B1\n");
+
     // String? indica que a variável pode ser nula
     String? telefone; 
 
@@ -19,6 +21,8 @@ void b1(){
 
 /* B2 - Tente imprimir telefone.length diretamente. Copie a mensagem de erro como comentário e depois corrija usando ?.. */
 void b2(){
+
+    print("Exercício B2\n");
     
     String? telefone; 
 
@@ -36,6 +40,8 @@ void b2(){
 /* B3 - Escreva uma função que receba double? chuvaMm e devolva um texto: "sem registro" quando for nula, "seca" abaixo de 20 mm e "normal" acima disso. */
 void b3(){
 
+    print("Exercício B3\n");
+
     double? chuvaMm;
 
     print("Chuva: ${chuvaMm == null ? "sem registro" : (chuvaMm < 20 ? "seca" : "normal")}");
@@ -44,6 +50,8 @@ void b3(){
 
 /* B4 -  Escreva uma função com retorno double? que calcule sacas por hectare e devolva nulo quando a área for zero ou negativa. Trate o resultado no main com uma verificação explícita, sem usar o operador !. */
 void b4(){
+
+    print("Exercício B4\n");
 
     double? calcularSacasPorHa(double area, double producao){
         if(area <= 0){
@@ -66,6 +74,8 @@ void b4(){
 mensagem de execução e escreva, em comentário, por que esse operador deve ser
 evitado. */
 void b5(){
+
+    print("Exercício B5\n");
 
     String? valorNulo;
 

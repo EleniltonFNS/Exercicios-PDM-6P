@@ -9,6 +9,8 @@ void main(){
 /* C1 - Usando interpolação, monte e imprima a frase "O Talhão 3 tem 42,0 ha plantados com milho" a partir de três variáveis. */
 void c1(){
 
+    print("Exercício C1\n");
+
     String talhao = "Talhão 3";
     double areaHa = 42.0;
     String cultura = "milho";
@@ -20,6 +22,8 @@ void c1(){
 /* C2 - Imprima um valor monetário no formato brasileiro, com o cifrão escapado corretamente e vírgula como separador decimal. Dica: toStringAsFixed seguido de replaceAll. */
 void c2(){
 
+    print("Exercício C2\n");
+
     double valor = 1234.56;
 
     // .replaceAll('.', ',') substitui o ponto por vírgula no valor monetário.
@@ -29,6 +33,8 @@ void c2(){
 
 /* C3 - Crie um texto de várias linhas com o endereço completo de uma cooperativa e imprima-o. */
 void c3(){
+
+    print("Exercício C3\n");
 
     // String de várias linhas usando três aspas duplas.
     String endereco = """
@@ -46,7 +52,9 @@ void c3(){
 /* C4 - A partir da string ' soja , milho , sorgo ', produza uma lista com as três culturas sem espaços em excesso e em letras maiúsculas. */
 void c4(){
 
-    String culturasString = " soja , milho , sorgo ';
+    print("Exercício C4\n");
+
+    String culturasString = " soja , milho , sorgo ";
 
     // .trim() remove espaços em excesso no início e no final da string.
     // .split(',') divide a string em uma lista de substrings com base na vírgula.

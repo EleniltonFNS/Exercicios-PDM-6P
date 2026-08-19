@@ -14,6 +14,8 @@ void main(){
 Use if/else. */
 void d1(){
 
+    print("Exercício D1\n");
+
     // Gerando um valor aleatório de produtividade entre 0 e 100 sc/ha.
     final random = Random();
 
@@ -36,6 +38,8 @@ void d1(){
 devolve um valor). */
 void d2(){
 
+    print("Exercício D2\n");
+
     final random = Random();
 
     double produtividade = random.nextDouble() * 100;
@@ -56,6 +60,8 @@ void d2(){
 /* D3 - Imprima uma tabela de conversão de hectares para alqueires goianos, de 10 em 10, de 10 até 100 hectares. */
 void d3(){
 
+    print("Exercício D3\n");
+
     print("Tabela de Conversão de Hectares para Alqueires Goianos");
     print("\nHectares\tAlqueires");
     
@@ -68,6 +74,8 @@ void d3(){
 
 /* D4 - Simule a colheita: partindo de 5.000 sacas em estoque, retire 350 por dia e imprima quantos dias levam até o estoque acabar. Use while. */
 void d4(){
+
+    print("Exercício D4\n");
 
     int estoque = 5000;
     int retirada = 350;
@@ -85,6 +93,8 @@ void d4(){
 /* D5 - Percorra uma lista de meses da safra com for-in e imprima cada um numerado. */
 void d5(){
 
+    print("Exercício D5\n");
+
     List<String> mesesSafra = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
 
     int numero = 1;
@@ -98,6 +108,8 @@ void d5(){
 
 /* D6 - Percorra uma lista de áreas e some apenas as maiores que zero, usando continue para pular as demais. Interrompa o laço com break se a soma passar de 200 ha. */
 void d6(){
+
+    print("Exercício D6\n");
 
     List<double> areas = [50.0, -10.0, 30.0, 80.0, 20.0, -5.0, 40.0];
 
@@ -113,5 +125,4 @@ void d6(){
     }
 
     print("Soma das áreas maiores que zero: $soma ha");
-    print("\n--------------------------------\n");
 }

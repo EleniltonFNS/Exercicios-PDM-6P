@@ -10,7 +10,9 @@ void main(){
 /* A1 - Declare, com tipos explícitos, o nome de um produtor, a cidade, a área da propriedade em hectares e o ano da safra.
 Imprima uma linha de identificação com os quatro valores. */
 void a1(){
-    
+
+    print("Exercício A1\n");
+
     String nomeProdutor = "Elenilton";
     String cidade = "Carmo do Rio verde";
     double areaPropriedadeHa = 150.5;
@@ -24,6 +26,8 @@ void a1(){
 Escreva em comentário qual tipo foi inferido em cada caso. */
 void a2(){
     
+    print("Exercício A2\n");
+
     var nomeProdutor = "Elenilton"; // String
     var cidade = "Carmo do Rio verde"; // String
     var areaPropriedadeHa = 150.5; // double
@@ -37,6 +41,8 @@ void a2(){
 /* A3 - Declare uma constante para o alqueire goiano (4,84 ha) e outra variável com final recebendo DateTime.now(). 
 Tente trocar o final por const, leia o erro e explique a diferença entre os dois. */
 void a3(){
+
+    print("Exercício A3\n");
 
     const double alqueireGoiano = 4.84;
     final DateTime dataAtual = DateTime.now();
@@ -53,11 +59,13 @@ void a3(){
     */
     print("Enquanto \"const\" é usado para valores que são conhecidos em tempo de compilação e não podem ser alterados, \"final\" é usado para valores que são definidos em tempo de execução e também não podem ser alterados após a atribuição inicial."); 
     print("No caso do DateTime.now(), o valor é determinado em tempo de execução, portanto, não pode ser declarado como const.");
-    p
+    print("\n--------------------------------\n");
 }
 
 /* A4 - Converta uma área em hectares para alqueires goianos e imprima o resultado com duas casas decimais. */
 void a4(){
+
+    print("Exercício A4\n");
 
     double areaHectares = 150.5;
     const double alqueireGoiano = 4.84;
@@ -72,6 +80,8 @@ void a4(){
 /* A5 - Declare três cotações de saca. Imprima a maior, a menor e a média, todas com duas casas. 
 Dica: a > b ? a : b resolve a comparação de dois valores. */
 void a5(){
+
+    print("Exercício A5\n");
     
     double cot1 = 150.75;
     double cot2 = 145.30;
