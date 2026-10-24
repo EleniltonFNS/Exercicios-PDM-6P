@@ -88,7 +88,8 @@ void e4(){
 
   // .entries retorna uma coleção de pares chave-valor do mapa, permitindo percorrer cada entrada.
   for (var entry in cotacaoSaca.entries) {
-    print("${entry.key.toLowerCase()}: R\$ ${entry.value.toStringAsFixed(2)}");
+    // .replaceAll('.', ',') troca o ponto decimal pela vírgula para ficar no formato "R$ 128,40".
+    print("${entry.key.toLowerCase()}: R\$ ${entry.value.toStringAsFixed(2).replaceAll('.', ',')}");
   }
   print("\n--------------------------------\n");
 }

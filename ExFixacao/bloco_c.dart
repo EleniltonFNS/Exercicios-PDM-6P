@@ -15,7 +15,8 @@ void c1(){
   double areaHa = 42.0;
   String cultura = "milho";
 
-  print("O $talhao tem ${areaHa.toStringAsFixed(1)} ha plantados com $cultura");
+  // .replaceAll('.', ',') troca o ponto decimal pela vírgula, como pede o padrão brasileiro ("42,0").
+  print("O $talhao tem ${areaHa.toStringAsFixed(1).replaceAll('.', ',')} ha plantados com $cultura");
   print("\n--------------------------------\n");
 }
 

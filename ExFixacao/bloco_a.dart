@@ -56,6 +56,16 @@ void a3(){
     const DateTime dataAtual = DateTime.now();
                                         ^^^
   */
+
+  /* Diferença entre const e final:
+
+  const: o valor precisa ser conhecido em tempo de COMPILAÇÃO e nunca muda. Serve para valores fixos, como o alqueire goiano (4,84 ha).
+  final: o valor é atribuído uma única vez, mas pode ser calculado em tempo de EXECUÇÃO, quando o programa já está rodando.
+
+  Por isso "const DateTime dataAtual = DateTime.now();" não compila: DateTime.now() depende do relógio do aparelho, que só é lido na execução, e o construtor dele não é const. Com "final" funciona, porque a data é lida uma vez na execução e depois não pode mais ser trocada. */
+
+  print("Alqueire goiano: $alqueireGoiano ha");
+  print("Data e hora da execução: $dataAtual");
   print("Enquanto \"const\" é usado para valores que são conhecidos em tempo de compilação e não podem ser alterados, \"final\" é usado para valores que são definidos em tempo de execução e também não podem ser alterados após a atribuição inicial."); 
   print("No caso do DateTime.now(), o valor é determinado em tempo de execução, portanto, não pode ser declarado como const.");
   print("\n--------------------------------\n");

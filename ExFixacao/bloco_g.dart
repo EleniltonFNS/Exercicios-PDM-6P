@@ -143,6 +143,20 @@ void g6(){
     print("Área total: ${areaTotal.toStringAsFixed(2)} ha");
     print("Talhões de soja: $talhoesDeSoja");
     print("Maior talhão: $maiorTalhao");
+
+    /* Comparação com a versão que usava mapas (Bloco E):
+
+    No Bloco E as áreas eram uma List<double> solta, sem nome e sem cultura. Para filtrar por cultura eu precisaria de uma segunda lista em paralelo ou de um mapa por talhão, e aí cada acesso passa a depender de uma chave escrita como texto (talhaoMapa["areaHa"]).
+
+    Com a classe Talhao:
+    - os campos têm nome e tipo (areaHa é double, cultura é String); um erro de digitação como talhao.areaaHa nem compila, em vez de devolver null só na execução;
+    - o campo calculado (areaAlqueires) e o toString ficam junto dos dados, em um lugar só;
+    - where, fold e reduce funcionam do mesmo jeito, mas agora acessam talhao.areaHa e talhao.cultura com ajuda do editor (autocompletar). */
+
+    // Demonstração do risco do mapa: a chave errada não dá erro, devolve null.
+    final Map<String, dynamic> talhaoMapa = {"nome": "Talhão 5", "areaHa": 50.0, "cultura": "Milho"};
+    print("Mapa, chave certa: ${talhaoMapa["areaHa"]}");
+    print("Mapa, chave com erro de digitação: ${talhaoMapa["areaaHa"]}");
     print("\n--------------------------------\n");
 }
 

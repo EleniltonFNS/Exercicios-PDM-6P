@@ -42,9 +42,22 @@ void b3(){
 
   print("Exercício B3\n");
 
-  double? chuvaMm;
+  // Recebe um double? e devolve um texto conforme a chuva registrada.
+  String classificarChuva(double? chuvaMm){
+    if(chuvaMm == null){
+      return "sem registro";
+    }
+    // Daqui para baixo o Dart já sabe que chuvaMm não é nulo (promoção de tipo), por isso a comparação funciona sem o operador !.
+    if(chuvaMm < 20){
+      return "seca";
+    }
+    return "normal";
+  }
 
-  print("Chuva: ${chuvaMm == null ? "sem registro" : (chuvaMm < 20 ? "seca" : "normal")}");
+  // Três chamadas, uma para cada caminho possível da função.
+  print("Chuva nula: ${classificarChuva(null)}");
+  print("Chuva de 12.5 mm: ${classificarChuva(12.5)}");
+  print("Chuva de 48.0 mm: ${classificarChuva(48.0)}");
   print("\n--------------------------------\n");
 }
 
@@ -86,5 +99,11 @@ void b5(){
   Uncaught Error, error: Error: Unexpected null value.
   */
 
+  /* Por que o operador ! deve ser evitado:
+
+  O "!" diz ao Dart "confie em mim, isto não é nulo" e desliga a verificação de null safety naquele ponto. Se eu estiver errado, o erro só aparece em tempo de EXECUÇÃO, com o programa já rodando (por exemplo, no celular do produtor, no meio da lavoura), e derruba a execução. Sem o "!", o compilador me obriga a tratar o nulo antes de usar o valor (com ??, ?. ou um if), e o problema aparece na hora de escrever o código, não na hora de usar o app. */
+
+  // Forma segura de tratar o mesmo valor:
+  print("Valor: ${valorNulo ?? "nulo, tratado sem usar !"}");
   print("O operador ! força a desreferenciação de uma variável que pode ser nula. Se a variável for realmente nula, isso causará uma exceção em tempo de execução. Portanto, deve ser evitado, pois pode levar a falhas inesperadas no programa.");
 }
