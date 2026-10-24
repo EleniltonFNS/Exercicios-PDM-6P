@@ -58,6 +58,12 @@ class TelaResumo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Área total calculada a partir da lista, em vez de um valor escrito à mão.
+    final areaTotal = talhoes.fold<double>(0, (soma, t) => soma + t.areaHa);
+
+    // Decisões de interface para uso no campo (luvas, sol forte, talhão):
+    // 1) Número em destaque: os valores dos cards (_CardNumero) usam fonte 34 em negrito, legíveis de relance mesmo com reflexo do sol.
+    // 2) Contraste alto: texto verde escuro (0xFF1E5631) sobre fundo verde claro (0xFFD5F5E3), contraste de cerca de 7,4:1.
     return Scaffold(
       appBar: AppBar( // AppBar: barra de título no topo da tela.
         title: const Text('Caderno de Campo do Vale'),
@@ -87,7 +93,7 @@ class TelaResumo extends StatelessWidget {
                   // SizedBox: um espaço vazio de tamanho fixo. Aqui, respiro vertical.
                   SizedBox(height: 4),
                   Text(
-                    'Goiania — GO',
+                    'Goiânia — GO',
                     style: TextStyle(fontSize: 16, color: Colors.black54),
                   ),
                 ],
@@ -120,7 +126,7 @@ class TelaResumo extends StatelessWidget {
               ],
             ),
 
-            // Enquanto o Expanded divide o espaço disponível igualmente entre os cards, o Flexible permite que defina uma proporção de espaço para cada card usando o parâmetro flex. No exemplo acima, o primeiro card ocupa 2/3 do espaço disponível, enquanto o segundo ocupa 1/3.
+            // Tarefa 3 do ciclo 2: Expanded divide o espaço em partes iguais entre os cards. Trocando por Flexible(flex: 2) no primeiro e Flexible(flex: 1) no segundo, o primeiro passa a ter direito ao dobro do espaço do segundo (proporção 2:1). Porém o Flexible usa FlexFit.loose por padrão: o card pode ocupar MENOS que a sua fatia, se o conteúdo for pequeno. A proporção 2:1 só aparece de fato com fit: FlexFit.tight, que é exatamente o que o Expanded faz.
 
             const SizedBox(height: 16),
 
@@ -148,11 +154,11 @@ class TelaResumo extends StatelessWidget {
             const SizedBox(height: 16),
             // Row: distribui os filhos na horizontal, lado a lado.
             Row(
-              children: const [
-                Text('Área total: ', style: TextStyle(fontSize: 16)),
+              children: [
+                const Text('Área total: ', style: TextStyle(fontSize: 16)),
                 Text(
-                  '96,4 ha',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  '${areaTotal.toStringAsFixed(1).replaceAll('.', ',')} ha',
+                  style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
               ],
             ),
@@ -217,8 +223,24 @@ class TelaResumo extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: const Color(0xFF1E5631),
         onPressed: () {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Novo registro (em breve)')),
+          // Culturas distintas: map pega a cultura de cada talhão e toSet() descarta as repetições.
+          final culturas = talhoes.map((t) => t.cultura).toSet();
+          showDialog(
+            context: context,
+            builder: (context) => AlertDialog(
+              title: const Text('Culturas da propriedade'),
+              content: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [for (final c in culturas) Text('• $c')],
+              ),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: const Text('Fechar'),
+                ),
+              ],
+            ),
           );
         },
         child: const Icon(Icons.add, color: Colors.white),

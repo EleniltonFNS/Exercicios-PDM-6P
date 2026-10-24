@@ -243,7 +243,6 @@ class _TelaCalculadoraState extends State<TelaCalculadora> {
 
                 OutlinedButton(
                   onPressed: _limpar,
-                  child: const Text('Limpar'),
                   style: OutlinedButton.styleFrom(
                     side: const BorderSide(color: Color(0xFF1E5631)),
                     padding: const EdgeInsets.symmetric(vertical: 16),
@@ -251,6 +250,7 @@ class _TelaCalculadoraState extends State<TelaCalculadora> {
                       borderRadius: BorderRadius.circular(4),
                     ),
                   ),
+                  child: const Text('Limpar'),
                 ),
               ],
             ),

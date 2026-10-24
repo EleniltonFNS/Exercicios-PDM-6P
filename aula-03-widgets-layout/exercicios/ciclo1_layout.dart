@@ -101,3 +101,5 @@ class TelaInicial extends StatelessWidget {
 
 // DICA: no DartPad, o hot reload é automático ao salvar. Se algo parecer
 // travado, use o botão Run de novo.
+
+// Resposta da tarefa 4: com crossAxisAlignment.center, o nome da fazenda e a cidade passam a ficar centralizados na horizontal, em vez de colados à esquerda. A Row da área total continua à esquerda, porque a Row ocupa a largura inteira e seus filhos começam no início dela, então o alinhamento da Column não muda o que está dentro da Row. Depois voltei para .start.

@@ -102,3 +102,7 @@ class TelaTalhoes extends StatelessWidget {
 //
 // PERGUNTA: por que ListView.builder é melhor que escrever 6 ListTile na
 // mão? Pense em uma propriedade com 200 talhões.
+
+// Resposta da tarefa 4: o Card coloca uma caixa com sombra e cantos arredondados em volta de cada talhão, e a lista deixa de parecer uma tabela contínua: cada talhão vira um bloco separado dos vizinhos.
+//
+// Resposta da pergunta: com 200 talhões, escrever 200 ListTile à mão seria um código enorme, repetido, e cada mudança teria de ser feita 200 vezes. O ListView.builder constrói só os itens que aparecem na tela, sob demanda, e a lista acompanha os dados: se a lista talhoes mudar, a tela muda junto.

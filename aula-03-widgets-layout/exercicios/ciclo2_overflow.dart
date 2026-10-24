@@ -123,3 +123,5 @@ class _CardNumero extends StatelessWidget {
 //
 // PERGUNTA PARA DISCUSSÃO: por que o overflow acontece na horizontal (Row)
 // com muito mais frequência do que na vertical (Column) neste tipo de tela?
+
+// Resposta da pergunta: o overflow é mais comum na horizontal porque a largura do celular é pequena e fixa, e nada rola para os lados por padrão, então o que não cabe na Row estoura. Na vertical, o que passa da altura pode ir para um ListView ou SingleChildScrollView e simplesmente rola.
